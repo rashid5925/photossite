@@ -1,0 +1,42 @@
+<!doctype html>
+{% extends "base.html" %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %} Contact {% endblock %}</title>
+</head>
+
+<body>
+  {% block content %}
+  {% load static %}
+  <h1 class="text-center pt-5 fs-1 text-bold fw-bold text-info">Contact</h1>
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <form action="" method="post">
+          {% csrf_token %}
+          <div class="mb-3">
+            <label for="f_name" class="form-label">Email address</label>
+            <input type="text" class="form-control" id="f_name" name="f_name" placeholder="Enter Name">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" id="message" name="message" rows="3"></textarea>
+          </div>
+		  <div class="d-grid gap-2">
+			<button type="submit" class="btn btn-info">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  {% endblock %}
+</body>
+
+</html>

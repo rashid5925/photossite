@@ -1,0 +1,36 @@
+<!doctype html>
+{% extends "base.html" %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %} Blog {% endblock %}</title>
+  </head>
+  <body>
+    {% block content %} 
+    {% load static %}
+    <main class="container">
+		<div class="p-4 p-md-5 mb-4 rounded text-bg-info">
+			<div class="col-md-6 px-0">
+				<h1 class="display-4 fst-italic text-white">Blog</h1>
+				<p class="lead my-3 text-white fw-bold">Capturing Moments: Exploring the Art of Photography</p>
+			</div>
+		</div>
+    {% for x in posts %}
+		<div class="row mb-2">
+			<div class="col-md-6">
+				<div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+					<div class="col p-4 d-flex flex-column position-static">
+						<h3 class="mb-0">{{x.title}}</h3>
+						<div class="mb-1 text-body-secondary">{{x.date}}</div>
+						<p class="card-text mb-auto">{{x.text}}</p>
+					</div>
+				</div>
+			</div>
+		</div>  
+	
+	{% endfor %} 
+</main>
+    {% endblock %}
+  </body>
+</html>

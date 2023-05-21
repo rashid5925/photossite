@@ -1,0 +1,27 @@
+<!doctype html>
+{% extends "base.html" %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %} About {% endblock %}</title>
+  </head>
+  <body>
+    {% block content %} 
+    {% load static %}
+    <div class="container-fluid p-5">
+      <div class="row mx-5">
+          <div class="col-md-6 d-flex flex-column justify-content-center align-items-center">
+              <h1 class="fs-2">About <span class="fs-1 text-info">Alhanouf Alshehry's</span> Photography!</h1>
+              <p class="fs-5 text-dark-emphasis">I am a passionate photographer with a keen eye for capturing moments that tell stories and evoke emotions. Through my lens, I aim to freeze time and create timeless memories.</p>
+              <p class="fs-5 text-dark-emphasis">With a background in [mention any relevant experience or education], I bring a unique perspective and a dedication to delivering high-quality photographs. Whether it's a wedding, portrait session, or a breathtaking landscape, I strive to showcase the beauty and essence of every subject.</p>
+              <p class="fs-5 text-dark-emphasis">Photography is not just a profession for me; it's my way of connecting with the world and expressing my creativity. I believe that every person and every place has a story to tell, and I am here to capture those stories in vivid detail. My goal is to create images that not only look stunning but also resonate with the viewers.</p>
+            </div>
+          <div class="col-md-6 text-end">
+              <img width="80%" src="{% static '/about.png' %}" alt="camera" />
+          </div>
+      </div>
+    </div>
+    {% endblock %}
+  </body>
+</html>
